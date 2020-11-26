@@ -234,11 +234,11 @@ fn main() {
 
 pub struct FlyCameraPlugin;
 
-impl Plugin for FlyCameraPlugin {
+impl bevy::prelude::Plugin for FlyCameraPlugin {
 	fn build(&self, app: &mut AppBuilder) {
 		app
 			.init_resource::<State>()
-			.add_system(camera_movement_system.system())
-			.add_system(mouse_motion_system.system());
+			.add_system(camera_movement_system)
+			.add_system(mouse_motion_system);
 	}
 }
